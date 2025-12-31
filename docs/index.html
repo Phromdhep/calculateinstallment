@@ -307,7 +307,7 @@
         const n = termYears * 12;
         const pmtVal = pmt(monthlyRate, n, amount);
         const rounded = roundUpToNearestTen(pmtVal);
-        const html = `\n          <div class="section-title">ผลการคำนวณ</div>\n          <div class="row">\n            <div class="label">ยอดผ่อนชำระขั้นต่ำต่อเดือน</div>\n            <div class="value">${rounded.toLocaleString('en')} บาท</div>\n          </div>\n          <div class="row">\n            <div class="label">หมายเหตุ</div>\n            <div class="value">เป็นเพียงการคำนวณเบื้องต้นประกอบการตัดสินใจ อาจมีค่าธรรมเนียม ภาษี หรือเงื่อนไขอื่น ๆ ที่ยังไม่ได้คำนวณ หากต้องการยอดที่แน่นอน โปรดติดต่อธนาคาร</div>\n          </div>\n        `;
+        const html = `\n          <div class="section-title">ผลการคำนวณ</div>\n          <div class="row">\n            <div class="label">ยอดผ่อนชำระขั้นต่ำต่อเดือน</div>\n            <div class="value">${rounded.toLocaleString('en')} บาท</div>\n          </div>\n          <div class="row">\n            <div class="label">หมายเหตุ : เป็นเพียงการคำนวณเบื้องต้นประกอบการตัดสินใจ อาจมีการเปลี่ยนแปลงได้</div>\n          </div>\n        `;
         return showResult(html);
       }
 
@@ -331,7 +331,7 @@
         const pmtAfter = pmt(afterMonthlyRate, remainingMonths, amount);
         const pmtAfterRounded = roundUpToNearestTen(pmtAfter);
 
-    const html = `\n          <div class="section-title">ผลการคำนวณ</div>\n          <div class="row">\n            <div class="label">ปีที่ 1</div>\n            <div class="value">${y1Pay.toLocaleString('en')} บาท/เดือน</div>\n          </div>\n          <div class="row">\n            <div class="label">ปีที่ 2</div>\n            <div class="value">${y2Pay.toLocaleString('en')} บาท/เดือน</div>\n          </div>\n          <div class="row">\n            <div class="label">ปีที่ 3</div>\n            <div class="value">${y3Pay.toLocaleString('en')} บาท/เดือน</div>\n          </div>\n          <div class="row">\n            <div class="label">ปีที่ 4 เป็นต้นไป</div>\n            <div class="value">${pmtAfterRounded.toLocaleString('en')} บาท/เดือน</div>\n          </div>\n          <div class="row">\n            <div class="label">หมายเหตุ</div>\n            <div class="value">เป็นการคำนวณแบบประมาณการเท่านั้น หากต้องการยอดที่แน่นอน โปรดติดต่อธนาคารหรือผู้ให้บริการ</div>\n          </div>\n        `;
+    const html = `\n          <div class="section-title">ผลการคำนวณ</div>\n          <div class="row">\n            <div class="label">ปีที่ 1</div>\n            <div class="value">${y1Pay.toLocaleString('en')} บาท/เดือน</div>\n          </div>\n          <div class="row">\n            <div class="label">ปีที่ 2</div>\n            <div class="value">${y2Pay.toLocaleString('en')} บาท/เดือน</div>\n          </div>\n          <div class="row">\n            <div class="label">ปีที่ 3</div>\n            <div class="value">${y3Pay.toLocaleString('en')} บาท/เดือน</div>\n          </div>\n          <div class="row">\n            <div class="label">ปีที่ 4 เป็นต้นไป</div>\n            <div class="value">${pmtAfterRounded.toLocaleString('en')} บาท/เดือน</div>\n          </div>\n          <div class="row">\n            <div class="label">หมายเหตุหมายเหตุ : เป็นเพียงการคำนวณเบื้องต้นประกอบการตัดสินใจ อาจมีการเปลี่ยนแปลงได้</div>\n          </div>\n        `;
 
         return showResult(html);
       }
